@@ -1,24 +1,20 @@
-import React from 'react';
-import './App.css';
+import React, { Component } from 'react';
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+import Home from "./Pages/Home";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+    render(){
+        return (
+            <BrowserRouter>
+            <ul>
+                <li><Link to={'/'}>Home</Link></li>
+            </ul>
+                <Switch>
+                    <Route exact path={'/'} render={() => <Home />} />
+                </Switch>
+            </BrowserRouter>
+        )
+    }
 }
 
 export default App;
