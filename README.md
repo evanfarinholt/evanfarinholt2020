@@ -1,3 +1,3 @@
 ## Personal Site of Evan Farinholt
 
-The live version of this site can be seen [here](https://evanfarinholt2020.herokuapp.com/)
+The live version of this site can be seen [here](https://evanfarinholt.com/)
