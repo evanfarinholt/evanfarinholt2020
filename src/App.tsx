@@ -9,6 +9,7 @@ class App extends Component {
             <BrowserRouter>
                 <Switch>
                     <Route exact path={pageUrls.home} render={() => <Home />} />
+                    <Route path={"*"} render={() => <Home />} />
                 </Switch>
             </BrowserRouter>
         )
