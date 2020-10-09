@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { pageUrls } from "./Resources/strings";
 import Home from "./Pages/Home";
 
-class App extends Component {
+export default class App extends Component {
     render(){
         return (
             <BrowserRouter>
@@ -15,5 +15,3 @@ class App extends Component {
         )
     }
 }
-
-export default App;

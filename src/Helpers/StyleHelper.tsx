@@ -40,4 +40,5 @@ class Text {
 export default {
     Template
     , Text
+    , Colors
 }

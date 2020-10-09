@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import Colors from "../../Helpers/StyleHelper";
+import { Colors } from "../../Helpers/StyleHelper";
 
 interface IProps {
     skill: string;
     percentage: number;
-    color: typeof Colors;
+    color: Colors;
 }
 
 export default class SkillMeter extends Component<IProps> {
@@ -13,14 +13,21 @@ export default class SkillMeter extends Component<IProps> {
         this.state = {};
     }
     render(){
-        const meterWidth: number = this.props.percentage < 100
+        const meterFillWidth: number = this.props.percentage < 100
             ? this.props.percentage
             : 100;
+
+        const meterContainer = {
+
+        }
+        const meterFill = {
+            width: `${meterFillWidth}%`
+        }
         return (
             <div>
                <h3>{this.props.skill}</h3>
-               <div>
-                   <div style={{width: `${meterWidth}%`}}></div>
+               <div style={meterContainer}>
+                   <div style={meterFill}></div>
                </div>
             </div>
         )
