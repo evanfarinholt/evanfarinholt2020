@@ -1,45 +1,43 @@
 export enum Colors {
-    Brand = "#deb1b1"
-    , BrandSecondary = "#3DABAE"
-    , Success = "green"
-    , Warning = "yellow"
-    , Error = "red"
+    White = "#ffffff"
+    , MintGreen = "#88EAB5"
+    , ElectricBlue = "#0FA3F5"
+    , SunsetOrange = "#FFBA7B"
+    , DkGray = "#2E2E2E"
+    , MdGray = "#494949"
 }
 
-export enum FontSizes {
-    Header = 1
-    , HeaderSecondary = 2
-    , Paragraph = 3
-    , Sub = 4
-}
-
-export class StyleHelper {
-    static baseTextStyle = {
-        margin: 0
-        , padding: 0
+class Template {
+    static pageWrapper(){
+        return {
+            background: `linear-gradient(258.8deg, ${Colors.DkGray} 23.68%, ${Colors.MdGray} 106.16%)`
+            , height: "100vh"
+        }
     }
+}
+
+class Text {
+    static baseTextStyle(){
+        return {
+            margin: 0
+            , padding: 0
+            , fontFamily: "'Roboto', -apple-system, BlinkMacSystemFont"
+        }
+    }
+
     static header(){
         return {
-            fontFamily: "'Abril Fatface', -apple-system, BlinkMacSystemFont"
-            , fontSize: "3rem"
-            , lineHeight: "150%"
-            , color: Colors.Brand
+            fontSize: "3rem"
+            , fontWeight: 900
+            , lineHeight: "1.5"
+            , letterSpacing: "-.2rem"
+            , color: Colors.White
             , ...this.baseTextStyle
         }
     }
-    static headerSecondary(){
-        return {
-            fontFamily: "'Abril Fatface', -apple-system, BlinkMacSystemFont"
-            , fontSize: "1.5rem"
-            , lineHeight: "150%"
-            , color: Colors.BrandSecondary
-            , ...this.baseTextStyle
-        }
-    }
-    static paragraph(){
-        return{
-            fontSize: "1rem"
-            , lineHeight: "150%"
-        }
-    }
+}
+
+export default {
+    Template
+    , Text
 }

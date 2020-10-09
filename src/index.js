@@ -4,7 +4,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import HttpsRedirect from 'react-https-redirect';
 
-import './Styles/index.css';
+import './Styles/App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
 ReactDOM.render(
