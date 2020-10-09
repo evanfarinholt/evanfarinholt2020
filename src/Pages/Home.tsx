@@ -3,7 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import StyleHelper from "../Helpers/StyleHelper";
 import TimelineItem from "../Components/TimelineItem";
 
-class Home extends Component {
+export default class Home extends Component {
     render(){
         return (
             <Container fluid={true} style={StyleHelper.Template.pageWrapper()}>
@@ -25,5 +25,3 @@ class Home extends Component {
         )
     }
 }
-
-export default Home;

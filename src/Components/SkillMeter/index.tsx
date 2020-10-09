@@ -3,25 +3,26 @@ import Colors from "../../Helpers/StyleHelper";
 
 interface IProps {
     skill: string;
-    pecentage: number;
+    percentage: number;
     color: typeof Colors;
 }
 
-class SkillMeter extends Component<IProps> {
+export default class SkillMeter extends Component<IProps> {
     constructor(props: IProps) {
         super(props);
         this.state = {};
     }
     render(){
+        const meterWidth: number = this.props.percentage < 100
+            ? this.props.percentage
+            : 100;
         return (
             <div>
                <h3>{this.props.skill}</h3>
                <div>
-                   <div style={{width: `${this.props.pecentage}%`}}></div>
+                   <div style={{width: `${meterWidth}%`}}></div>
                </div>
             </div>
         )
     }
 }
-
-export default SkillMeter;

@@ -6,7 +6,7 @@ interface IProps {
     skills: string[];
 }
 
-class TimelineItem extends Component<IProps> {
+export default class TimelineItem extends Component<IProps> {
     constructor(props: IProps) {
         super(props);
         this.state = {};
@@ -27,5 +27,3 @@ class TimelineItem extends Component<IProps> {
         )
     }
 }
-
-export default TimelineItem;
