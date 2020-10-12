@@ -1,21 +1,18 @@
 import React, { Component } from 'react';
+import { Text, TextType } from "../Text";
 
-interface IProps {
+export interface ITimelineItem {
     dateRange: string;
     narrative: string;
     skills: string[];
 }
 
-export default class TimelineItem extends Component<IProps> {
-    constructor(props: IProps) {
-        super(props);
-        this.state = {};
-    }
+export default class TimelineItem extends Component<ITimelineItem> {
     render(){
         return (
             <div>
-                <h3>{this.props.dateRange}</h3>
-                <p>{this.props.narrative}</p>
+                <Text type={TextType.h3}>{this.props.dateRange}</Text>
+                <Text type={TextType.p}>{this.props.narrative}</Text>
                 <ul>
                     {this.props.skills.map((skill: string, i: number) => {
                         return (

@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
-import { Colors } from "../../Helpers/StyleHelper";
+import { Colors } from "../../Helpers/EColors";
+import { Text, TextType } from "../Text";
 
-interface IProps {
+export interface ISkillMeterItem {
     skill: string;
     percentage: number;
     color: Colors;
 }
 
-export default class SkillMeter extends Component<IProps> {
-    constructor(props: IProps) {
-        super(props);
-        this.state = {};
-    }
+export default class SkillMeter extends Component<ISkillMeterItem> {
     render(){
         const meterFillWidth: number = this.props.percentage < 100
             ? this.props.percentage
@@ -25,7 +22,7 @@ export default class SkillMeter extends Component<IProps> {
         }
         return (
             <div>
-               <h3>{this.props.skill}</h3>
+               <Text type={TextType.h2}>{this.props.skill}</Text>
                <div style={meterContainer}>
                    <div style={meterFill}></div>
                </div>
