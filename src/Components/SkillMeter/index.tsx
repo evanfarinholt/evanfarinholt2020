@@ -1,6 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component, CSSProperties } from 'react';
 import { Colors } from "../../Helpers/EColors";
 import { Text, TextType } from "../Text";
+import Tooltip from "@material-ui/core/Tooltip";
+
 
 export interface ISkillMeterItem {
     skill: string;
@@ -13,16 +15,28 @@ export default class SkillMeter extends Component<ISkillMeterItem> {
         const meterFillWidth: number = this.props.percentage < 100
             ? this.props.percentage
             : 100;
-
-        const meterContainer = {
-
+        const skillContainer: CSSProperties = {
+            width: "100%"
+            , display: "flex"
+            , flexDirection: "column"
         }
-        const meterFill = {
+        const meterContainer: CSSProperties = {
+            backgroundColor: Colors.DkGray
+            , height: "25px"
+            , width: "100%"
+        }
+        const meterFill: CSSProperties = {
             width: `${meterFillWidth}%`
+            , backgroundColor: this.props.color
+            , height: "100%"
         }
         return (
-            <div>
-               <Text type={TextType.h2}>{this.props.skill}</Text>
+            <div style={skillContainer}>
+                <Tooltip title="Delete">
+                    <Text type={TextType.h4} overrides={{color: Colors.LtMintGreen}}>
+                        {this.props.skill}
+                    </Text>
+                </Tooltip>
                <div style={meterContainer}>
                    <div style={meterFill}></div>
                </div>

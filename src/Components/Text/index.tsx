@@ -1,91 +1,57 @@
-import React, { Component } from 'react';
+import React, { Component, CSSProperties } from 'react';
 import { Colors } from "../../Helpers/EColors";
 import { TextType } from "./ETextType";
+import styled from "styled-components";
 
 interface IProps {
-    type: TextType;
+    type?: TextType;
+    overrides?: CSSProperties;
 }
 
 class Text extends Component<IProps> {
-    baseTextStyle(){
-        return {
-            margin: 0
-            , padding: 0
-            , fontFamily: "'Roboto', -apple-system, BlinkMacSystemFont"
-        }
-    }
-    baseHeaderStyle(){
-        return {
-            letterSpacing: "-.2rem"
-            , lineHeight: "1.5"
-        }
-    }
-    paragraph(){
-        return {
-            fontSize: "1rem"
-            , color: Colors.White
-            , ...this.baseTextStyle()
-        }
-    }
-    header1(){
-        return {
-            fontSize: "3rem"
-            , fontWeight: 100
-            , color: Colors.White
-            , ...this.baseHeaderStyle()
-            , ...this.baseTextStyle()
-        }
-    }
-    header2(){
-        return {
-            fontSize: "3rem"
-            , fontWeight: 900
-            , color: Colors.White
-            , ...this.baseHeaderStyle()
-            , ...this.baseTextStyle()
-        }
-    }
-    header3(){
-        return {
-            fontSize: "2.5rem"
-            , fontWeight: 900
-            , letterSpacing: "-.2rem"
-            , color: Colors.White
-            , ...this.baseTextStyle()
-        }
-    }
-    header4(){
-        return {
-            fontSize: "2rem"
-            , fontWeight: 900
-            , letterSpacing: "-.2rem"
-            , color: Colors.White
-            , ...this.baseTextStyle()
-        }
-    }
-    pill(){
-        return {
-            fontSize: "1rem"
-            , fontWeight: 400
-            , ...this.baseTextStyle()
-        }
-    }
     render(){
+        const Paragraph = styled.p`
+            font-size: 1rem;
+            color: ${Colors.White};
+        `;
+        const Header1 = styled.h1`
+            font-size: 1.5rem;
+            font-weight: 900;
+            letter-spacing: -.2rem;
+            color: ${Colors.White};
+        `;
+        const Header2 = styled.h2`
+            font-size: 3rem;
+            font-weight: 900;
+            letter-spacing: "-.2rem";
+            color: ${Colors.White};
+        `;
+        const Header3 = styled.h3`
+            font-size: 2rem;
+            font-weight: 900;
+            letter-spacing: "-.1rem";
+            color: ${Colors.White};
+        `;
+        const Header4 = styled.h4`
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: ${Colors.White};
+        `;
         const DOM = () => {
             switch(this.props.type){
                 case TextType.p:
-                    return ( <p style={this.paragraph()}>{this.props.children}</p> )
                 case TextType.span:
-                    return ( <span style={this.paragraph()}>{this.props.children}</span> )
+                    return ( <Paragraph>{this.props.children}</Paragraph> )
                 case TextType.h1:
-                    return ( <h1 style={this.header1()}>{this.props.children}</h1> )
+                    return ( <Header1>{this.props.children}</Header1> )
                 case TextType.h2:
-                    return ( <h2 style={this.header2()}>{this.props.children}</h2> )
+                    return ( <Header2>{this.props.children}</Header2> )
                 case TextType.h3:
-                    return ( <h3 style={this.header3()}>{this.props.children}</h3> )
-                
+                    return ( <Header3>{this.props.children}</Header3> )
+                case TextType.h4:
+                    return ( <Header4>{this.props.children}</Header4> )
                 default:
-                    return ( <p style={this.paragraph()}>{this.props.children}</p> )
+                    return ( <Paragraph>{this.props.children}</Paragraph> )
             }
         }
         return (
