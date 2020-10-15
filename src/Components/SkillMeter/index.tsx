@@ -1,8 +1,8 @@
-import React, { Component, CSSProperties } from 'react';
+import React, { Component } from 'react';
 import { Colors } from "../../Helpers/EColors";
 import { Text, TextType } from "../Text";
 import Tooltip from "@material-ui/core/Tooltip";
-
+import styled from "styled-components";
 
 export interface ISkillMeterItem {
     skill: string;
@@ -15,32 +15,32 @@ export default class SkillMeter extends Component<ISkillMeterItem> {
         const meterFillWidth: number = this.props.percentage < 100
             ? this.props.percentage
             : 100;
-        const skillContainer: CSSProperties = {
-            width: "100%"
-            , display: "flex"
-            , flexDirection: "column"
-        }
-        const meterContainer: CSSProperties = {
-            backgroundColor: Colors.DkGray
-            , height: "25px"
-            , width: "100%"
-        }
-        const meterFill: CSSProperties = {
-            width: `${meterFillWidth}%`
-            , backgroundColor: this.props.color
-            , height: "100%"
-        }
+        const SkillContainer = styled.div`
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            .meter-container {
+                background-color: ${Colors.DkGray};
+                height: 25px;
+                width: 100%;
+                .meter-fill {
+                    width: ${meterFillWidth}%;
+                    background-color: ${this.props.color};
+                    height: 100%;
+                }
+            }
+        `;
         return (
-            <div style={skillContainer}>
+            <SkillContainer>
                 <Tooltip title="Delete">
-                    <Text type={TextType.h4} overrides={{color: Colors.LtMintGreen}}>
+                    <Text type={TextType.h4}>
                         {this.props.skill}
                     </Text>
                 </Tooltip>
-               <div style={meterContainer}>
-                   <div style={meterFill}></div>
+               <div className="meter-container">
+                   <div className="meter-fill"></div>
                </div>
-            </div>
+            </SkillContainer>
         )
     }
 }

@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import { Colors } from "../../Helpers/EColors";
+import styled from "styled-components";
 
 export default class PageWrapper extends Component {
     render(){
-        const pageWrapper = {
-            background: `linear-gradient(258.8deg, ${Colors.DkGray} 23.68%, ${Colors.MdGray} 106.16%)`
-        }
+        const PageWrapper = styled.div`
+            background: linear-gradient(258.8deg, ${Colors.DkGray} 23.68%, ${Colors.MdGray} 106.16%)
+        `;
         return (
-            <div style={pageWrapper}>
+            <PageWrapper>
                 {this.props.children}
-            </div>
+            </PageWrapper>
         )
     }
 }

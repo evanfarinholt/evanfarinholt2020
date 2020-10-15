@@ -7,4 +7,12 @@ body {
     font-family: 'Roboto', sans-serif, -apple-system, BlinkMacSystemFont !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    height: 100vh;
+}
+
+#root {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto 50px;
 }
