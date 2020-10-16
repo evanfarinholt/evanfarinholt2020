@@ -46,13 +46,15 @@ export default class Home extends Component {
                                 </Text>
                             </Col>
                             <Col xl={5}>
-                                {skillMeterItems.map((item: ISkillMeterItem) => {
+                                {skillMeterItems.map((item: ISkillMeterItem, i: number) => {
                                     return(
-                                        <SkillMeter
-                                            skill={item.skill}
-                                            percentage={item.percentage}
-                                            color={item.color}
-                                        />
+                                        <div key={i}>
+                                            <SkillMeter
+                                                skill={item.skill}
+                                                percentage={item.percentage}
+                                                color={item.color}
+                                            />
+                                        </div>
                                     )
                                 })}
                             </Col>
@@ -64,13 +66,15 @@ export default class Home extends Component {
                                 </Text>
                             </Col>
                             <Col xl={12}>
-                                {timelineItems.map((item: ITimelineItem) => {
+                                {timelineItems.map((item: ITimelineItem, i: number) => {
                                     return(
-                                        <TimelineItem
-                                            dateRange={item.dateRange}
-                                            narrative={item.narrative}
-                                            skills={item.skills}
-                                        />
+                                        <div key={i}>
+                                            <TimelineItem
+                                                dateRange={item.dateRange}
+                                                narrative={item.narrative}
+                                                skills={item.skills}
+                                            />
+                                        </div>
                                     )
                                 })}
                             </Col>

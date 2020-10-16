@@ -9,10 +9,9 @@ body {
     -moz-osx-font-smoothing: grayscale;
     height: 100vh;
 }
-
 #root {
     height: 100vh;
-    display: grid;
+    /* display: grid;
     grid-template-columns: auto;
-    grid-template-rows: auto 50px;
+    grid-template-rows: auto 50px; */
 }
