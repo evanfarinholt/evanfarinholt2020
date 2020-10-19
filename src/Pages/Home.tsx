@@ -38,6 +38,13 @@ export default class Home extends Component {
             left: 190px;
             width: 25px;
         `;
+        const SkillsLayout = styled.div`
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            background: ${Colors.MdGray};
+            padding: 30px;
+        `;
         return (
             <>
                 <PageWrapper>
@@ -57,7 +64,7 @@ export default class Home extends Component {
                         </Row>
                         
                         <Row>
-                            <Col xl={7}>
+                            <Col xl={8}>
                                 <Text type={TextType.h3}>
                                     Experienced Creative Technologist with a broad background in UX Research, UI Design, and more
                                 </Text>
@@ -65,18 +72,21 @@ export default class Home extends Component {
                                     Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
                                 </Text>
                             </Col>
-                            <Col xl={5}>
-                                {skillMeterItems.map((item: ISkillMeterItem, i: number) => {
-                                    return(
-                                        <div key={i}>
-                                            <SkillMeter
-                                                skill={item.skill}
-                                                percentage={item.percentage}
-                                                color={item.color}
-                                            />
-                                        </div>
-                                    )
-                                })}
+                            <Col xl={4}>
+                                <SkillsLayout>
+                                    <Text type={TextType.h4} color={Colors.LtGray}>Core Skills</Text>
+                                    {skillMeterItems.map((item: ISkillMeterItem, i: number) => {
+                                        return(
+                                            <div key={i}>
+                                                <SkillMeter
+                                                    skill={item.skill}
+                                                    percentage={item.percentage}
+                                                    color={item.color}
+                                                />
+                                            </div>
+                                        )
+                                    })}
+                                </SkillsLayout>
                             </Col>
                         </Row>
                         <Row>

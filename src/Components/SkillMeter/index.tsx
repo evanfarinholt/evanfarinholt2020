@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Colors } from "../../Helpers/EColors";
 import { Text, TextType } from "../Text";
-import Tooltip from "@material-ui/core/Tooltip";
 import styled from "styled-components";
 
 export interface ISkillMeterItem {
@@ -19,6 +18,7 @@ export default class SkillMeter extends Component<ISkillMeterItem> {
             width: 100%;
             display: flex;
             flex-direction: column;
+            gap: 5px;
             .meter-container {
                 background-color: ${Colors.DkGray};
                 height: 25px;
@@ -32,11 +32,9 @@ export default class SkillMeter extends Component<ISkillMeterItem> {
         `;
         return (
             <SkillContainer>
-                <Tooltip title="Delete">
-                    <Text type={TextType.h4}>
-                        {this.props.skill}
-                    </Text>
-                </Tooltip>
+                <Text type={TextType.h4} color={Colors.LtMintGreen}>
+                    {this.props.skill}
+                </Text>
                <div className="meter-container">
                    <div className="meter-fill"></div>
                </div>
