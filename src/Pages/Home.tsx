@@ -7,6 +7,8 @@ import { Text, TextType } from "../Components/Text";
 import PageWrapper from "../Components/PageWrapper";
 import FooterWrapper from "../Components/FooterWrapper";
 import ContactLinks from "../Components/ContactLinks";
+import VectorDivider from "../Components/VectorDivider";
+import styled from "styled-components";
 
 export default class Home extends Component {
     render(){
@@ -23,16 +25,34 @@ export default class Home extends Component {
             , {dateRange: "2017", narrative: "Recieved a UX Certificate from Nielsen Norman Group after attending a 5-day intensive UX  course.", skills: ["Moderated Usability Studies", "Survey Design", "CoDesign", "Card Sorting", "Information Architecture"]}
             , {dateRange: "2018 - Present", narrative: "Helped design and build one of the leading Commercial Real Estate software platforms on the market.", skills: ["Design Ops", "Figma", "Agile", "Data Visualization"]}
         ]
-        
+        const HeroLayout = styled.div`
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            height: 300px;
+            justify-content: center;
+        `;
+        const Pointer = styled.img`
+            position: absolute;
+            top: 55px;
+            left: 190px;
+            width: 25px;
+        `;
         return (
             <>
                 <PageWrapper>
                     <Container>
                         <Row>
                             <Col xl={12}>
-                                <Text type={TextType.h1}>Evan Farinholt</Text>
-                                <Text type={TextType.h2}>Creative Technologist</Text>
-                                <ContactLinks showLinkText={false} iconColor={Colors.White} />
+                                <HeroLayout>
+                                    <div>
+                                        <Text type={TextType.h1}>Evan Farinholt</Text>
+                                        <Pointer src="/pointer.svg" />
+                                        <Text type={TextType.h2}>Creative Technologist</Text>
+                                    </div>
+                                    <VectorDivider />
+                                    <ContactLinks showLinkText={false} iconColor={Colors.White} />
+                                </HeroLayout>
                             </Col>
                         </Row>
                         

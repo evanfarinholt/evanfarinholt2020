@@ -5,6 +5,7 @@ import { detect } from "detect-browser";
 import NotSupported from "./Pages/NotSupported";
 
 export default class App extends Component {
+
     isBrowserSupported(name: string, version: string){
         const splitVersion: string = `${version.split(".")[0]}.${version.split(".")[1]}`;
         const intVersion: number = parseInt(splitVersion);
@@ -34,6 +35,7 @@ export default class App extends Component {
         }
         return supported;
     }
+    
     render(){
         const browser = detect();
         return (

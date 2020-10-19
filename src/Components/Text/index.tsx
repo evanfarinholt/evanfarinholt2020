@@ -17,8 +17,8 @@ class Text extends Component<IProps> {
             margin: unset;
         `;
         const Header1 = styled.h1`
-            font-size: 1.5rem;
-            font-weight: 100;
+            font-size: 2rem;
+            font-weight: 300;
             letter-spacing: -.1rem;
             color: ${textColor};
             margin: unset;
