@@ -3,10 +3,11 @@ import { Text, TextType } from "../Text";
 import styled from "styled-components";
 import { Colors } from '../../Helpers/EColors';
 
-export interface ITimelineItem {
+interface ITimelineItem {
     dateRange: string;
     narrative: string;
     skills: string[];
+    isLast: boolean;
 }
 
 export default class TimelineItem extends Component<ITimelineItem> {
@@ -29,7 +30,7 @@ export default class TimelineItem extends Component<ITimelineItem> {
                     width: 4px;
                     background: ${Colors.LtGray};
                     z-index: 1;
-                    height: auto;
+                    height: 110%;
                 }
             }
             .timeline-content {
@@ -50,7 +51,7 @@ export default class TimelineItem extends Component<ITimelineItem> {
                     <Text color={Colors.SunsetOrange}>
                         &#x25A0;
                     </Text>
-                    <div className="timeline-track"></div>
+                    { !this.props.isLast && <div className="timeline-track"></div>} 
                 </div>
                 <div className="timeline-content">
                     <Text type={TextType.h4} color={Colors.SunsetOrange}>
