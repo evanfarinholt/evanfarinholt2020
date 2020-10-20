@@ -8,4 +8,6 @@ export enum Colors {
     , DkGray = "#2E2E2E"
     , MdGray = "#494949"
     , LtGray = "#4F4F4F"
+    , XltGray = "#A3A3A3"
+
 }

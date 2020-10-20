@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faLinkedinIn, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { Colors } from '../../Helpers/EColors';
 import { Text } from "../Text";
@@ -16,9 +16,10 @@ export default class ContactLinks extends Component<IContactLinks> {
         const iconColor: Colors = this.props.iconColor || Colors.White;
         const LinkList = styled.ul`
             display: inline-flex;
-            gap: 10px;
+            gap: ${this.props.showLinkText ? `20px` : `10px`};
             list-style-type: none;
             padding: unset;
+            margin: unset;
             li {
                 display: inline-flex;
                 flex-direction: row;
@@ -31,7 +32,7 @@ export default class ContactLinks extends Component<IContactLinks> {
                     }
                 }
                 &:hover {
-                    a .link-icon {
+                    a * {
                         color: ${Colors.MintGreen};
                     }
                 }

@@ -6,4 +6,5 @@ export enum TextType {
     , h3 = "h3"
     , h4 = "h4"
     , pill = "pill"
+    , button = "button"
 }

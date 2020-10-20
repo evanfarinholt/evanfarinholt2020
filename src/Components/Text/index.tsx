@@ -52,6 +52,14 @@ class Text extends Component<IProps> {
             padding: 5px 10px;
             margin: unset;
         `;
+        const Button = styled.p`
+            font-size: 1rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: ${textColor};
+            margin: unset;
+            line-height: 98%;
+        `;
         const DOM = () => {
             switch(this.props.type){
                 case TextType.p:
@@ -65,6 +73,8 @@ class Text extends Component<IProps> {
                     return ( <Header3>{this.props.children}</Header3> )
                 case TextType.h4:
                     return ( <Header4>{this.props.children}</Header4> )
+                case TextType.button:
+                    return ( <Button>{this.props.children}</Button> )
                 case TextType.pill:
                     return ( <Pill>{this.props.children}</Pill> )
                 default:
