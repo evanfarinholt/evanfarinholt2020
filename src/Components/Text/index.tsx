@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Colors } from "../../Helpers/EColors";
+import { Colors } from "../../Helpers/Enums";
 import { TextType } from "./ETextType";
 import styled from "styled-components";
 

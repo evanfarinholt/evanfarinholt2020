@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from "styled-components";
-import { Colors } from "../../Helpers/EColors";
+import { Colors } from "../../Helpers/Enums";
 
 export default class VectorDivider extends Component {
     render(){

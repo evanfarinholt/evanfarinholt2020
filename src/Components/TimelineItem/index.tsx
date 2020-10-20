@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Text, TextType } from "../Text";
 import styled from "styled-components";
-import { Colors } from '../../Helpers/EColors';
+import { Colors } from '../../Helpers/Enums';
 
 interface ITimelineItem {
     dateRange: string;

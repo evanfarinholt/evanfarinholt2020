@@ -11,3 +11,10 @@ export enum Colors {
     , XltGray = "#A3A3A3"
 
 }
+
+export const urls = {
+    resumeUrl: "/pointer.svg"
+    , linkedinUrl: "https://www.linkedin.com/in/evanfarinholt"
+    , githubUrl: "https://github.com/evanfarinholt"
+    , mailtoUrl: "mailto:efarinholt@gmail.com"
+}

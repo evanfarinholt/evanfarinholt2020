@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import TimelineItem from "../Components/TimelineItem";
 import SkillMeter, { ISkillMeterItem } from "../Components/SkillMeter";
-import { Colors } from "../Helpers/EColors";
+import { Colors, urls } from "../Helpers/Enums";
 import { Text, TextType } from "../Components/Text";
 import ContactLinks from "../Components/ContactLinks";
 import VectorDivider from "../Components/VectorDivider";
@@ -114,7 +114,7 @@ export default class Home extends Component {
                                             <Text type={TextType.h2}>Creative Technologist</Text>
                                         </div>
                                         <VectorDivider />
-                                        <ContactLinks showLinkText={false} iconColor={Colors.White} />
+                                        <ContactLinks showLinkText={false} />
                                     </HeroLayout>
                                 </Col>
                             </Row>
@@ -163,7 +163,7 @@ export default class Home extends Component {
                                     </Text>
                                 </Col>
                                 <Col xl={{span: 2, offset: 2}} className="d-flex justify-content-end">
-                                    <ResumeButton target="_blank" href="/pointer.svg">
+                                    <ResumeButton target="_blank" href={urls.resumeUrl}>
                                         <FontAwesomeIcon className="link-icon" icon={faFilePdf} /> 
                                         <Text color={Colors.SunsetOrange} type={TextType.button}>Download Resume</Text>
                                     </ResumeButton>
@@ -195,7 +195,7 @@ export default class Home extends Component {
                         <Row>
                             <Col xl={{span: 10, offset: 1}}>
                                 <div className="inner-wrapper">
-                                    <ContactLinks showLinkText={true} iconColor={Colors.White} />
+                                    <ContactLinks showLinkText={true} />
                                 </div>
                             </Col>
                         </Row>

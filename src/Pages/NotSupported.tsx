@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import styled from "styled-components";
 import { Text, TextType } from "../Components/Text";
-import { Colors } from "../Helpers/EColors";
+import { Colors, urls } from "../Helpers/Enums";
 
 export default class NotSupported extends Component {
     render(){
@@ -20,15 +20,15 @@ export default class NotSupported extends Component {
             <Wrapper>
                 <Container>
                     <Row>
-                        <Col className="main-content" xs={{span: 4, offset: 4}}>
+                        <Col className="main-content" xs={{span: 6, offset: 3}}>
                             <Text type={TextType.h3}>
-                                Sorry,
+                                Sorry...
                             </Text>
                             <Text>
-                                this site uses code that isn't supported by your browser.
+                                This site uses code that isn't supported by your browser.
                             </Text>
                             <Text>
-                                You can still download my resume <a href="#">here</a>.
+                                You can still download my resume <a target="_blank" href={urls.resumeUrl}>here</a>.
                             </Text>
                         </Col>
                     </Row>
