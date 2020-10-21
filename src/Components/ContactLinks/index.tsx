@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
+import { faEnvelope, faCopy } from "@fortawesome/free-regular-svg-icons";
 import { faLinkedinIn, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { Colors, urls } from '../../Helpers/Enums';
-import { Text } from "../Text";
+import { Text, TextType } from "../Text";
 import styled from "styled-components";
 
 interface IContactLinks {
@@ -11,6 +11,9 @@ interface IContactLinks {
 }
 
 export default class ContactLinks extends Component<IContactLinks> {
+    handleCopyText(text: string) {
+        navigator.clipboard.writeText(text);
+    }
     render(){
         const LinkList = styled.ul`
             display: inline-flex;
@@ -18,15 +21,18 @@ export default class ContactLinks extends Component<IContactLinks> {
             list-style-type: none;
             padding: unset;
             margin: unset;
+            flex-wrap: wrap;
             li {
                 display: inline-flex;
                 flex-direction: row;
-                a {
+                a, button {
                     display: inline-flex;
                     gap: 10px;
                     text-decoration: none;
                     .link-icon {
                         color: ${Colors.White};
+                        height: 22px;
+                        width: 22px;
                     }
                 }
                 &:hover {
@@ -36,13 +42,45 @@ export default class ContactLinks extends Component<IContactLinks> {
                 }
             }
         `;
+        const CopyButton = styled.button`
+            background: unset;
+            border: unset;
+            outline: unset;
+            &:focus,
+            &:active {
+                border: unset;
+                outline: unset;
+            }
+            .copy-icon,
+            .copy-text {
+                display: none;
+            }
+            &:hover {
+                .copy-icon,
+                .copy-text,
+                p {
+                    display: block;
+                    color: ${Colors.MintGreen};
+                }
+                .envelope-icon {
+                    display: none;
+                }
+                
+            }           
+        `;
+        
         return(
             <LinkList>
                 <li>
-                    <a href={urls.mailtoUrl}>
-                        <FontAwesomeIcon className="link-icon" icon={faEnvelope} /> 
-                        {this.props.showLinkText && <Text>efarinholt@gmail.com</Text>}
-                    </a>
+                    <CopyButton onClick={() => this.handleCopyText("efarinholt@gmail.com")}>
+                        <FontAwesomeIcon className="link-icon envelope-icon" icon={faEnvelope} /> 
+                        <FontAwesomeIcon className="link-icon copy-icon" icon={faCopy} /> 
+                        {this.props.showLinkText && 
+                            <div className="d-flex flex-column">
+                                <Text>efarinholt@gmail.com</Text>
+                                <Text type={TextType.sub} className="copy-text">Copy</Text>
+                            </div>}
+                    </CopyButton>
                 </li>
                 <li>
                     <a href={urls.linkedinUrl} target="_blank" rel="noopener noreferrer">

@@ -33,16 +33,25 @@ export default class Home extends Component {
                 background-position: top right;
                 background-size: 400px;
             }
+            @media (max-width: 872px) {
+                .inner-wrapper {
+                    background-image: none;
+                }
+            }
         `;
         const Section2 = styled.section`
             background: ${Colors.DkGray};
-            background-image: url("/map-profile-pic.svg");
+            background-image: url("/map-profile-pic.svg");  
             background-repeat: no-repeat;
             background-position: bottom left;
             background-size: 600px;
             padding: 50px 0;
             min-height: 620px;
-            
+
+            @media (max-width: 1024px) {
+                background-image: none;
+                min-height: auto;
+            }
         `;
         const Section3 = styled.section`
             background-image: linear-gradient(258.8deg, ${Colors.DkGray} 23.68%, ${Colors.MdGray} 106.16%);
@@ -163,7 +172,7 @@ export default class Home extends Component {
                                     </Text>
                                 </Col>
                                 <Col xl={{span: 2, offset: 2}} className="d-flex justify-content-end">
-                                    <ResumeButton target="_blank" href={urls.resumeUrl}>
+                                    <ResumeButton href={urls.resumeUrl} target="_blank" rel="noopener noreferrer">
                                         <FontAwesomeIcon className="link-icon" icon={faFilePdf} /> 
                                         <Text color={Colors.SunsetOrange} type={TextType.button}>Download Resume</Text>
                                     </ResumeButton>

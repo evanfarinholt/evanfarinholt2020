@@ -6,6 +6,7 @@ import styled from "styled-components";
 interface IProps {
     type?: TextType;
     color?: Colors;
+    className?: string;
 }
 
 class Text extends Component<IProps> {
@@ -60,25 +61,32 @@ class Text extends Component<IProps> {
             margin: unset;
             line-height: 98%;
         `;
+        const Sub = styled.sub`
+            font-size: .6rem;
+            text-align: left;
+            color: ${textColor};
+        `;
         const DOM = () => {
             switch(this.props.type){
                 case TextType.p:
                 case TextType.span:
-                    return ( <Paragraph>{this.props.children}</Paragraph> )
+                    return ( <Paragraph className={this.props.className}>{this.props.children}</Paragraph> )
                 case TextType.h1:
-                    return ( <Header1>{this.props.children}</Header1> )
+                    return ( <Header1 className={this.props.className}>{this.props.children}</Header1> )
                 case TextType.h2:
-                    return ( <Header2>{this.props.children}</Header2> )
+                    return ( <Header2 className={this.props.className}>{this.props.children}</Header2> )
                 case TextType.h3:
-                    return ( <Header3>{this.props.children}</Header3> )
+                    return ( <Header3 className={this.props.className}>{this.props.children}</Header3> )
                 case TextType.h4:
-                    return ( <Header4>{this.props.children}</Header4> )
+                    return ( <Header4 className={this.props.className}>{this.props.children}</Header4> )
                 case TextType.button:
-                    return ( <Button>{this.props.children}</Button> )
+                    return ( <Button className={this.props.className}>{this.props.children}</Button> )
                 case TextType.pill:
-                    return ( <Pill>{this.props.children}</Pill> )
+                    return ( <Pill className={this.props.className}>{this.props.children}</Pill> )
+                case TextType.sub:
+                    return ( <Sub className={this.props.className}>{this.props.children}</Sub> )
                 default:
-                    return ( <Paragraph>{this.props.children}</Paragraph> )
+                    return ( <Paragraph className={this.props.className}>{this.props.children}</Paragraph> )
             }
         }
         return (

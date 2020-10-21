@@ -28,7 +28,7 @@ export default class NotSupported extends Component {
                                 This site uses code that isn't supported by your browser.
                             </Text>
                             <Text>
-                                You can still download my resume <a target="_blank" href={urls.resumeUrl}>here</a>.
+                                You can still download my resume <a href={urls.resumeUrl} target="_blank" rel="noopener noreferrer">here</a>.
                             </Text>
                         </Col>
                     </Row>
