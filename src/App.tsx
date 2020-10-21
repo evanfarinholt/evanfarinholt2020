@@ -18,8 +18,6 @@ export default class App extends Component {
                 break;
             case "chrome":
                 supported = intVersion > 56;
-                // FOR TESTING BROWSER DETECTION:
-                // supported = intVersion > 90;
                 break;
             case "safari":
                 supported = intVersion > 10;
@@ -30,6 +28,9 @@ export default class App extends Component {
             case "opera":
                 supported = intVersion > 43;
                 break;
+            case "ios":
+                supported = intVersion >= 10;
+                break;
             default:
                 supported = false;
         }
@@ -38,6 +39,7 @@ export default class App extends Component {
     
     render(){
         const browser = detect();
+        //browser && console.log([browser.name, browser.version])
         return (
             <>
                 {browser && browser.version && this.isBrowserSupported(browser.name, browser.version) ?

@@ -46,6 +46,7 @@ export default class ContactLinks extends Component<IContactLinks> {
             background: unset;
             border: unset;
             outline: unset;
+            padding: unset;
             &:focus,
             &:active {
                 border: unset;
