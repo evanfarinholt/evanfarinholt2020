@@ -47,7 +47,7 @@ export default class Home extends Component {
             background-position: bottom left;
             background-size: 600px;
             padding: 50px 0;
-            min-height: 620px;
+            min-height: 640px;
 
             @media (max-width: 991px) {
                 background-image: none;
@@ -148,7 +148,7 @@ export default class Home extends Component {
                                     Experienced Creative Technologist with a broad background in UX Research, UI Design, and more
                                 </Text>
                                 <Text>
-                                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                                    Evan Farinholt is looking to make the next generation of digital products more usable, accessible, and beautiful.
                                 </Text>
                             </Col>
                             <Col lg={4} xl={{span: 3, offset: 1}}>
@@ -176,12 +176,12 @@ export default class Home extends Component {
                     <div className="inner-wrapper">
                         <Container fluid={true}>
                             <Row>
-                                <Col xs={9} sm={6} md={6} xl={{span: 4, offset: 2}} className="d-flex align-items-center">
+                                <Col xs={9} sm={6} md={6} lg={6} xl={{span: 4, offset: 2}} className="d-flex align-items-center">
                                     <Text type={TextType.h4} color={Colors.XltGray}>
                                         My Professional Journey
                                     </Text>
                                 </Col>
-                                <Col xs={3} sm={6} md={6} xl={{span: 2, offset: 2}} className="d-flex justify-content-end">
+                                <Col xs={3} sm={6} md={6} lg={6} xl={{span: 3, offset: 1}} className="d-flex justify-content-end">
                                     <ResumeButton href={urls.resumeUrl} target="_blank" rel="noopener noreferrer">
                                         <FontAwesomeIcon className="link-icon" icon={faFilePdf} /> 
                                         <Text color={Colors.SunsetOrange} type={TextType.button} className="d-none d-sm-block">Download Resume</Text>
