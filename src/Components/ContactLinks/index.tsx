@@ -9,10 +9,22 @@ import styled from "styled-components";
 interface IContactLinks {
     showLinkText: boolean;
 }
+interface IState {
+    copyText: string;
+}
+export default class ContactLinks extends Component<IContactLinks, IState> {
 
-export default class ContactLinks extends Component<IContactLinks> {
+    constructor(props: IContactLinks){
+        super(props);
+        this.state = {
+            copyText: "Copy"
+        }
+    }
     handleCopyText(text: string) {
         navigator.clipboard.writeText(text);
+        this.setState({
+            copyText: "Copied!"
+        });
     }
     render(){
         const LinkList = styled.ul`
@@ -72,17 +84,21 @@ export default class ContactLinks extends Component<IContactLinks> {
         
         return(
             <LinkList>
-                <li>
-                    <CopyButton onClick={() => this.handleCopyText("efarinholt@gmail.com")}>
-                        <FontAwesomeIcon className="link-icon envelope-icon" icon={faEnvelope} /> 
-                        <FontAwesomeIcon className="link-icon copy-icon" icon={faCopy} /> 
-                        {this.props.showLinkText && 
-                            <div className="d-flex flex-column">
-                                <Text>efarinholt@gmail.com</Text>
-                                <Text type={TextType.sub} className="copy-text">Copy</Text>
-                            </div>}
-                    </CopyButton>
-                </li>
+                {this.props.showLinkText && 
+                    <li>
+                        <CopyButton onClick={() => this.handleCopyText("efarinholt@gmail.com")}>
+                            <FontAwesomeIcon className="link-icon envelope-icon" icon={faEnvelope} /> 
+                            <FontAwesomeIcon className="link-icon copy-icon" icon={faCopy} /> 
+                            
+                                <div className="d-flex flex-column">
+                                    <Text>efarinholt@gmail.com</Text>
+                                    <Text type={TextType.sub} className="copy-text">
+                                        {this.state.copyText}
+                                    </Text>
+                                </div>
+                        </CopyButton>
+                    </li>
+                }
                 <li>
                     <a href={urls.linkedinUrl} target="_blank" rel="noopener noreferrer">
                         <FontAwesomeIcon className="link-icon" icon={faLinkedinIn} /> 

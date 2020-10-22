@@ -34,6 +34,9 @@ export default class TimelineItem extends Component<ITimelineItem> {
                 }
             }
             .timeline-content {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
                 ul {
                     display: inline-flex;
                     flex-wrap: wrap;

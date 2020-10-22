@@ -62,7 +62,7 @@ class Text extends Component<IProps> {
             line-height: 98%;
         `;
         const Sub = styled.sub`
-            font-size: .6rem;
+            font-size: .7rem;
             text-align: left;
             color: ${textColor};
         `;
