@@ -4,6 +4,7 @@ export enum Colors {
     , LtMintGreen = "#CEFFE5"
     , ElectricBlue = "#0FA3F5"
     , SunsetOrange = "#FFBA7B"
+    , LtSunsetOrange = "#FFD8B4"
     , Black = "#000000"
     , DkGray = "#2E2E2E"
     , MdGray = "#494949"

@@ -1,38 +1,22 @@
 import React, { Component } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
 import styled from "styled-components";
-import { Text, TextType } from "../Components/Text";
-import { Colors, urls } from "../Helpers/Enums";
+import { Text } from "../Components/Text";
+import { Colors } from "../Helpers/Enums";
 
 export default class NotSupported extends Component {
     render(){
         const Wrapper = styled.div`
-            background: ${Colors.DkGray};
-            height: 100vh;
-            .container {
-                height: 100vh;
-                .main-content {
-                    margin-top: 17%;
-                }
-            }
+            background: ${Colors.LtSunsetOrange};
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            padding: 10px;
         `;
         return(
             <Wrapper>
-                <Container>
-                    <Row>
-                        <Col className="main-content" xs={{span: 6, offset: 3}}>
-                            <Text type={TextType.h3}>
-                                Sorry...
-                            </Text>
-                            <Text>
-                                This site uses code that isn't supported by your browser.
-                            </Text>
-                            <Text>
-                                You can still download my resume <a href={urls.resumeUrl} target="_blank" rel="noopener noreferrer">here</a>.
-                            </Text>
-                        </Col>
-                    </Row>
-                </Container>
+                <Text className="not-supported-text" color={Colors.DkGray}>
+                    <b>Warning!</b> This site uses code that may not be supported by your browser. <a href="https://www.google.com/chrome/" target="_blank" rel="noopener noreferrer">You can download a supported browser here</a>.
+                </Text>
             </Wrapper>
         )
     }

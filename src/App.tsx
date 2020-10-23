@@ -18,6 +18,7 @@ export default class App extends Component {
                 break;
             case "chrome":
                 supported = intVersion > 56;
+                //supported = intVersion > 100;
                 break;
             case "safari":
                 supported = intVersion > 10;
@@ -39,19 +40,18 @@ export default class App extends Component {
     
     render(){
         const browser = detect();
-        //browser && console.log([browser.name, browser.version])
+        
         return (
             <>
-                {browser && browser.version && this.isBrowserSupported(browser.name, browser.version) ?
+                {browser && browser.version && !this.isBrowserSupported(browser.name, browser.version) &&
+                    <NotSupported />
+                }
                     <BrowserRouter>
                         <Switch>
                             <Route exact path={"/"} render={() => <Home />} />
                             <Route path={"*"} render={() => <Home />} />
                         </Switch>
                     </BrowserRouter>
-                    :
-                    <NotSupported />
-                }
             </>
         )
     }
