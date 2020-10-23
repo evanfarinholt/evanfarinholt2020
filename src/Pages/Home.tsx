@@ -13,10 +13,10 @@ import { faFilePdf } from "@fortawesome/free-regular-svg-icons";
 export default class Home extends Component {
     render(){
         const skillMeterItems: ISkillMeterItem[] = [
-            {skill: "UX Research", percentage: 90, color: Colors.MintGreen} 
-            , {skill: "UI Design", percentage: 80, color: Colors.MintGreen} 
-            , {skill: "Design Ops", percentage: 65, color: Colors.MintGreen} 
-            , {skill: "Creative Direction", percentage: 40, color: Colors.MintGreen} 
+            {skill: "UI Design", percentage: 95, color: Colors.MintGreen} 
+            , {skill: "UX Research", percentage: 90, color: Colors.MintGreen} 
+            , {skill: "Design Ops", percentage: 80, color: Colors.MintGreen} 
+            , {skill: "Creative Direction", percentage: 70, color: Colors.MintGreen} 
         ]
         const timelineItems = [
             {dateRange: "2011", narrative: "Graduated from the School of Visual Art & Design at University of South Carolina with a B.S. Degree in Photography.", skills: ["Photoshop", "Digital Photography", "Film Photography", "Color Theory", "Typography", "Graphic Design"]}
