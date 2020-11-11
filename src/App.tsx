@@ -18,6 +18,7 @@ export default class App extends Component {
                 supported = intVersion > 51;
                 break;
             case "chrome":
+            case "crios":
                 supported = intVersion > 56;
                 break;
             case "safari":
