@@ -28,26 +28,18 @@ export default class ContactLinks extends Component<IContactLinks, IState> {
     }
     render(){
         const LinkList = styled.ul`
-            display: inline-flex;
-            display: -webkit-inline-flex;
-            gap: ${this.props.showLinkText ? "20px" : "10px"};
             list-style-type: none;
             padding: unset;
             margin: unset;
-            flex-wrap: wrap;
             li {
-                display: inline-flex;
-                display: -webkit-inline-flex;
-                flex-direction: row;
+                margin-right: ${this.props.showLinkText ? "20px" : "10px"};
                 a, button {
-                    display: inline-flex;
-                    display: -webkit-inline-flex;
-                    gap: 10px;
                     text-decoration: none;
                     .link-icon {
                         color: ${Colors.White};
                         height: 22px;
                         width: 22px;
+                        margin-right: 10px;
                     }
                 }
                 &:hover {
@@ -62,6 +54,7 @@ export default class ContactLinks extends Component<IContactLinks, IState> {
             border: unset;
             outline: unset;
             padding: unset;
+            
             &:focus,
             &:active {
                 border: unset;
@@ -86,10 +79,10 @@ export default class ContactLinks extends Component<IContactLinks, IState> {
         `;
         
         return(
-            <LinkList>
+            <LinkList className="d-flex flex-row flex-wrap">
                 {this.props.showLinkText && 
-                    <li>
-                        <CopyButton onClick={() => this.handleCopyText("efarinholt@gmail.com")}>
+                    <li className="d-flex flex-row">
+                        <CopyButton onClick={() => this.handleCopyText("efarinholt@gmail.com")} className="d-flex flex-row">
                             <FontAwesomeIcon className="link-icon envelope-icon" icon={faEnvelope} /> 
                             <FontAwesomeIcon className="link-icon copy-icon" icon={faCopy} /> 
                             
@@ -103,13 +96,13 @@ export default class ContactLinks extends Component<IContactLinks, IState> {
                     </li>
                 }
                 <li>
-                    <a href={urls.linkedinUrl} target="_blank" rel="noopener noreferrer">
+                    <a href={urls.linkedinUrl} target="_blank" rel="noopener noreferrer" className="d-flex flex-row">
                         <FontAwesomeIcon className="link-icon" icon={faLinkedinIn} /> 
                         {this.props.showLinkText && <Text>linkedin.com/in/evanfarinholt</Text>}
                     </a>
                 </li>
                 <li>
-                    <a href={urls.githubUrl} target="_blank" rel="noopener noreferrer">
+                    <a href={urls.githubUrl} target="_blank" rel="noopener noreferrer" className="d-flex flex-row">
                         <FontAwesomeIcon className="link-icon" icon={faGithub} /> 
                         {this.props.showLinkText && <Text>github.com/evanfarinholt</Text>}
                     </a>

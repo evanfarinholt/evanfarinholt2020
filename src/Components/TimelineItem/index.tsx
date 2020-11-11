@@ -17,7 +17,6 @@ export default class TimelineItem extends Component<ITimelineItem> {
             grid-template-columns: 30px auto;
             
             .timeline-square {
-                display: flex;
                 p {
                     position: relative;
                     z-index: 2;
@@ -34,37 +33,34 @@ export default class TimelineItem extends Component<ITimelineItem> {
                 }
             }
             .timeline-content {
-                display: flex;
-                flex-direction: column;
-                gap: 10px;
+                > * {
+                    margin-bottom: 10px
+                }
                 ul {
-                    display: inline-flex;
-                    flex-wrap: wrap;
-                    gap: 10px;
                     list-style-type: none;
                     padding: unset;
                     li {
-                        display: flex;
+                        margin-right: 10px;
                     }
                 }
             }
         `;
         return (
             <TimelineWrapper>
-                <div className="timeline-square">
+                <div className="timeline-square d-flex">
                     <Text color={Colors.SunsetOrange}>
                         &#x25A0;
                     </Text>
                     { !this.props.isLast && <div className="timeline-track"></div>} 
                 </div>
-                <div className="timeline-content">
+                <div className="timeline-content d-flex flex-column">
                     <Text type={TextType.h4} color={Colors.SunsetOrange}>
                         {this.props.dateRange}
                     </Text>
                     <Text type={TextType.p}>
                         {this.props.narrative}
                     </Text>
-                    <ul>
+                    <ul className="d-inline-flex flex-wrap">
                         {this.props.skills.map((skill: string, i: number) => {
                             return (
                                 <li key={i}>

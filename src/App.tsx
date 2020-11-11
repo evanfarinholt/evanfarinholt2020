@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Home from "./Pages/Home";
 import { detect } from "detect-browser";
-import NotSupported from "./Pages/NotSupported";
-
+import Banner from "./Components/Banner";
+import { Colors } from './Helpers/Enums';
+import { Text } from "./Components/Text";
 export default class App extends Component {
 
     isBrowserSupported(name: string, version: string){
@@ -39,11 +40,19 @@ export default class App extends Component {
     
     render(){
         const browser = detect();
-        
+        console.log(browser)
+        const bannerContent = () => 
+            <Text color={Colors.DkGray}>
+                <b>Warning!</b> This site uses code that may not be supported by your browser. <a href="https://www.google.com/chrome/" target="_blank" rel="noopener noreferrer">You can download a supported browser here</a>.
+            </Text>
+
         return (
             <>
                 {browser && browser.version && !this.isBrowserSupported(browser.name, browser.version) &&
-                    <NotSupported />
+                    <Banner
+                        backgroundColor={Colors.SunsetOrange} 
+                        bannerContent={bannerContent()}
+                    />
                 }
                 <BrowserRouter>
                     <Switch>

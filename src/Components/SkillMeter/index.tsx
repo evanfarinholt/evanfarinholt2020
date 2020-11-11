@@ -16,9 +16,9 @@ export default class SkillMeter extends Component<ISkillMeterItem> {
             : 100;
         const SkillContainer = styled.div`
             width: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
+            > * {
+                margin-bottom: 5px;
+            }
             .meter-container {
                 background-color: ${Colors.DkGray};
                 height: 25px;
@@ -31,13 +31,13 @@ export default class SkillMeter extends Component<ISkillMeterItem> {
             }
         `;
         return (
-            <SkillContainer>
+            <SkillContainer className="d-flex flex-column">
                 <Text type={TextType.h4} color={Colors.LtMintGreen}>
                     {this.props.skill}
                 </Text>
-               <div className="meter-container">
-                   <div className="meter-fill"></div>
-               </div>
+                <div className="meter-container">
+                    <div className="meter-fill"></div>
+                </div>
             </SkillContainer>
         )
     }

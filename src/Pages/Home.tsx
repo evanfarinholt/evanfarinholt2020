@@ -24,7 +24,7 @@ export default class Home extends Component {
             , {dateRange: "2015 - 2018", narrative: "Was hired on as Usability Manager at a Fortune 500 Company where I managed the design and development of the company’s Digital Workspace, which was used by over 60,000 employees worldwide.", skills: ["Sketch", "Mobile Design", "Axure", "Workday", "Sharepoint"]}
             , {dateRange: "2017", narrative: "Recieved a UX Certificate from Nielsen Norman Group after attending a 5-day intensive UX  course.", skills: ["Moderated Usability Studies", "Card Sorting", "Information Architecture"]}
             , {dateRange: "2018 - 2019", narrative: "Did contract work for a leading UX Design & Research agency in New York.", skills: ["Survey Design", "CoDesign", "User Journey Analysis"]}
-            , {dateRange: "2019 - Present", narrative: "Helped design and build one of the leading Commercial Real Estate software platforms on the market.", skills: ["Design Ops", "Figma", "Agile", "Data Visualization"]}
+            , {dateRange: "2019 - Present", narrative: "Helped design and build one of the leading Commercial Real Estate software platforms on the market.", skills: ["Design Ops", "Figma", "Agile", "Data Visualization", "React JS", "TypeScript", "Styled Components"]}
         ];
         const Section1 = styled.header`
             background-image: linear-gradient(258.8deg, ${Colors.DkGray} 23.68%, ${Colors.MdGray} 106.16%);
@@ -67,17 +67,17 @@ export default class Home extends Component {
             }
         `;
         const HeroLayout = styled.div`
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
             height: 300px;
-            justify-content: center;
+            > * {
+                margin-bottom: 10px;
+            }
         `;
         const TimeLineLayout = styled.div`
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
             margin: 20px auto;
+            > * {
+                margin-bottom: 15px;
+            }
+            
         `;
         const Pointer = styled.img`
             position: relative;
@@ -86,9 +86,9 @@ export default class Home extends Component {
             left: 10px;
         `;
         const SkillsLayout = styled.div`
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
+            > * {
+                margin-bottom: 20px;
+            }
             background: ${Colors.MdGray};
             padding: 30px;
             border-radius: 20px;
@@ -101,10 +101,9 @@ export default class Home extends Component {
             }
         `;
         const ResumeButton = styled.a`
-            display: inline-flex;
-            align-items: center;
-            flex-direction: row;
-            gap: 10px;
+            > * {
+                margin-right: 10px;
+            }
             background: ${Colors.LtGray};
             padding: 5px 10px;
             &:hover {
@@ -123,7 +122,7 @@ export default class Home extends Component {
                         <Container fluid={true}>
                             <Row>
                                 <Col xl={{span: 10, offset: 1}}>
-                                    <HeroLayout>
+                                    <HeroLayout className="d-flex flex-column justify-content-center">
                                         <div>
                                             <Text type={TextType.h1}>
                                                 Evan Farinholt
@@ -152,10 +151,12 @@ export default class Home extends Component {
                                 </Text>
                             </Col>
                             <Col lg={4} xl={{span: 3, offset: 1}}>
-                                <SkillsLayout>
-                                    <Text type={TextType.h4} color={Colors.XltGray}>
-                                        Core Skills
-                                    </Text>
+                                <SkillsLayout className="d-flex flex-column">
+                                    <div>
+                                        <Text type={TextType.h4} color={Colors.XltGray}>
+                                            Core Skills
+                                        </Text>
+                                    </div>
                                     {skillMeterItems.map((item: ISkillMeterItem, i: number) => {
                                         return(
                                             <div key={i}>
@@ -182,7 +183,12 @@ export default class Home extends Component {
                                     </Text>
                                 </Col>
                                 <Col xs={3} sm={6} md={6} lg={6} xl={{span: 3, offset: 1}} className="d-flex justify-content-end">
-                                    <ResumeButton href={urls.resumeUrl} target="_blank" rel="noopener noreferrer">
+                                    <ResumeButton 
+                                        className="d-flex flex-row align-items-center"
+                                        href={urls.resumeUrl} 
+                                        target="_blank" 
+                                        rel="noopener noreferrer"
+                                    >
                                         <FontAwesomeIcon className="link-icon" icon={faFilePdf} /> 
                                         <Text color={Colors.SunsetOrange} type={TextType.button} className="d-none d-sm-block">Download Resume</Text>
                                     </ResumeButton>
@@ -190,7 +196,7 @@ export default class Home extends Component {
                             </Row>
                             <Row>
                                 <Col xl={{span: 8, offset: 2}}>
-                                    <TimeLineLayout>
+                                    <TimeLineLayout className="d-flex flex-column">
                                         {timelineItems.map((item: any, i: number) => {
                                             return(
                                                 <div key={i}>
