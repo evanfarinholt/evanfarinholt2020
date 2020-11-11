@@ -40,17 +40,18 @@ export default class App extends Component {
     
     render(){
         const browser = detect();
-        console.log(browser)
         const bannerContent = () => 
             <Text color={Colors.DkGray}>
                 <b>Warning!</b> This site uses code that may not be supported by your browser. <a href="https://www.google.com/chrome/" target="_blank" rel="noopener noreferrer">You can download a supported browser here</a>.
+                <br />
+                <small>{browser && (`${browser.name}, ${browser.version}, ${browser.os}`)}</small>
             </Text>
 
         return (
             <>
                 {browser && browser.version && !this.isBrowserSupported(browser.name, browser.version) &&
                     <Banner
-                        backgroundColor={Colors.SunsetOrange} 
+                        backgroundColor={Colors.LtSunsetOrange} 
                         bannerContent={bannerContent()}
                     />
                 }
