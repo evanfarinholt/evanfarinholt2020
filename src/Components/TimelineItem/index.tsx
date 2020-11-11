@@ -40,7 +40,7 @@ export default class TimelineItem extends Component<ITimelineItem> {
                     list-style-type: none;
                     padding: unset;
                     li {
-                        margin-right: 10px;
+                        margin: 0 10px 10px 0;
                     }
                 }
             }

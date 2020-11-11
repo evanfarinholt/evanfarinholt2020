@@ -101,8 +101,8 @@ export default class Home extends Component {
             }
         `;
         const ResumeButton = styled.a`
-            > * {
-                margin-right: 10px;
+            .button-text {
+                margin-left: 10px;
             }
             background: ${Colors.LtGray};
             padding: 5px 10px;
@@ -190,7 +190,7 @@ export default class Home extends Component {
                                         rel="noopener noreferrer"
                                     >
                                         <FontAwesomeIcon className="link-icon" icon={faFilePdf} /> 
-                                        <Text color={Colors.SunsetOrange} type={TextType.button} className="d-none d-sm-block">Download Resume</Text>
+                                        <Text className="button-text d-none d-sm-block" color={Colors.SunsetOrange} type={TextType.button}>Download Resume</Text>
                                     </ResumeButton>
                                 </Col>
                             </Row>

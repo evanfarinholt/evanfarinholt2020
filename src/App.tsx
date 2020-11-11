@@ -44,8 +44,6 @@ export default class App extends Component {
         const bannerContent = () => 
             <Text color={Colors.DkGray}>
                 <b>Warning!</b> This site uses code that may not be supported by your browser. <a href="https://www.google.com/chrome/" target="_blank" rel="noopener noreferrer">You can download a supported browser here</a>.
-                <br />
-                <small>{browser && (`${browser.name}, ${browser.version}, ${browser.os}`)}</small>
             </Text>
 
         return (

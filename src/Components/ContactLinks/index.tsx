@@ -33,6 +33,7 @@ export default class ContactLinks extends Component<IContactLinks, IState> {
             margin: unset;
             li {
                 margin-right: ${this.props.showLinkText ? "20px" : "10px"};
+                margin-bottom: 10px;
                 a, button {
                     text-decoration: none;
                     .link-icon {
