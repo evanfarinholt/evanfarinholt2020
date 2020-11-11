@@ -29,6 +29,7 @@ export default class ContactLinks extends Component<IContactLinks, IState> {
     render(){
         const LinkList = styled.ul`
             display: inline-flex;
+            display: -webkit-inline-flex;
             gap: ${this.props.showLinkText ? "20px" : "10px"};
             list-style-type: none;
             padding: unset;
@@ -36,9 +37,11 @@ export default class ContactLinks extends Component<IContactLinks, IState> {
             flex-wrap: wrap;
             li {
                 display: inline-flex;
+                display: -webkit-inline-flex;
                 flex-direction: row;
                 a, button {
                     display: inline-flex;
+                    display: -webkit-inline-flex;
                     gap: 10px;
                     text-decoration: none;
                     .link-icon {
