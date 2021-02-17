@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Colors } from "../Helpers/Enums";
-import { Text, TextType } from "../Components/Text";
+//import { Text, TextType } from "../Components/Text";
 import styled from "styled-components";
+import Gallery from "react-photo-gallery";
 
 export default class Photography extends Component {
     render(){
@@ -21,10 +22,40 @@ export default class Photography extends Component {
             }
         `;
         
+        const photos = [
+            {
+              src: "https://source.unsplash.com/2ShvY8Lf6l0/800x599",
+              width: 4,
+              height: 3
+            },
+            {
+              src: "https://source.unsplash.com/Dm-qxdynoEc/800x799",
+              width: 1,
+              height: 1
+            },
+        ]
+
+
+
+        const openLightbox = (photo: any) => {
+            console.log(photo)
+            // setCurrentImage(index);
+            // setViewerIsOpen(true);
+        }; 
+
         return (
             <>
-                
-                <h1>photo</h1>
+            <Container>
+                <Row>
+                    <Col>
+                        <h1>photo</h1>
+                        <Gallery 
+                            photos={photos} 
+                            onClick={openLightbox} 
+                        />
+                    </Col>
+                </Row>
+            </Container>
             </>
         )
     }

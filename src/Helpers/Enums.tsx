@@ -14,7 +14,7 @@ export enum Colors {
 }
 
 export const urls = {
-    resumeUrl: "/EvanFarinholt_Resume_2020.pdf"
+    resumeUrl: ""
     , linkedinUrl: "https://www.linkedin.com/in/evanfarinholt"
     , githubUrl: "https://github.com/evanfarinholt"
     , mailtoUrl: "mailto:efarinholt@gmail.com"
