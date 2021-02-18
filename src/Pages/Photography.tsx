@@ -26,7 +26,9 @@ export default class Photography extends Component {
             {
               src: "https://source.unsplash.com/2ShvY8Lf6l0/800x599",
               width: 4,
-              height: 3
+              height: 3,
+              name: "testing"
+
             },
             {
               src: "https://source.unsplash.com/Dm-qxdynoEc/800x799",
@@ -37,7 +39,7 @@ export default class Photography extends Component {
 
 
 
-        const openLightbox = (photo: any) => {
+        const openLightbox = (event: any, photo: any) => {
             console.log(photo)
             // setCurrentImage(index);
             // setViewerIsOpen(true);
