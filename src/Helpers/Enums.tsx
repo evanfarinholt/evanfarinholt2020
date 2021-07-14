@@ -19,3 +19,8 @@ export const urls = {
     , githubUrl: "https://github.com/evanfarinholt"
     , mailtoUrl: "mailto:efarinholt@gmail.com"
 }
+
+export const events = [
+    {date: "Jul 24", time:"@6pm", title: "Drums w/ Beau Dalleo Trio", venue: "Feile Restaurant & Pub", address: "1619 Post Rd., Wells ME"}
+    , {date: "Jul 24", time:"@6pm", title: " Drums w/ Beau Dalleo Trio", venue: "Feile Restaurant & Pub", address: "1619 Post Rd., Wells ME"}
+]

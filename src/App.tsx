@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Home from "./Pages/Home";
 import Photography from "./Pages/Photography";
+import Music from "./Pages/Music";
 import { detect } from "detect-browser";
 import Banner from "./Components/Banner";
 import { Colors } from './Helpers/Enums';
@@ -59,6 +60,7 @@ export default class App extends Component {
                     <Switch>
                         <Route exact path={"/"} render={() => <Home />} />
                         <Route exact path={"/photo"} render={() => <Photography />} />
+                        <Route exact path={"/music"} render={() => <Music />} />
                         <Route path={"*"} render={() => <Home />} />
                     </Switch>
                 </BrowserRouter>
