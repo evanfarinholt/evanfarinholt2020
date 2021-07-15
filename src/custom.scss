@@ -6,7 +6,7 @@ $gray-dark: #343a40;
 
 // TEXT OVERRIDES
 $font-size-base: 1rem;
-$line-height-base: 1.2;
+$line-height-base: 1.3;
 
 // THEME OVERRIDES
 $theme-colors: (
@@ -23,30 +23,40 @@ $btn-font-weight: var(--font-weight-bolder);
     --font-family-sans-serif: 'Oxygen', sans-serif, sans-serif, -apple-system, BlinkMacSystemFont;
     --font-family-monospace: 'Oxygen Mono', monospace, sans-serif, -apple-system, BlinkMacSystemFont;
     --font-size-xl: 3rem;
-    --font-size-lg: 2rem;
+    --font-size-lg: 2.5rem;
     --font-size-md: 1.5rem;
     --font-size-sm: 1rem;
     --font-size-xs: .8rem;
     --font-weight-bolder: 700;
     --font-weight-bold: 400;
     --font-weight-light: 300;
+    --letter-spacing-alt: .1rem;
 }
-
 
 
 @import "~bootstrap/scss/bootstrap.scss";
 
 $body-color: $white;
 $link-color: $white;
+$link-primary-decoration: underline;
+// $link-decoration-style: dashed;
+// $link-hover-decoration-style: dashed;
+
+body {
+    color: $white;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 
 h1 {
     font-family: var(--font-family-monospace);
     font-size: var(--font-size-xl);
+    letter-spacing: var(--letter-spacing-alt);
 }
 
 h2 {
     font-family: var(--font-family-sans-serif);
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-md);
     font-weight: var(--font-weight-light);
 }
 
@@ -59,22 +69,31 @@ h3 {
 h4 {
     font-family: var(--font-family-monospace);
     font-size: var(--font-size-md);
+    letter-spacing: var(--letter-spacing-alt);
 }
 
-p, span {
+p {
     font-family: var(--font-family-sans-serif);
     font-weight: var(--font-weight-light);
     font-size: var(--font-size-md);
 }
 
+span {
+    font-family: var(--font-family-sans-serif);
+    font-weight: var(--font-weight-light);
+    font-size: var(--font-size-sm);
+}
+
+.special-link {
+    font-family: var(--font-family-monospace);
+    font-size: var(--font-size-sm);
+}
+.special-label{
+    font-family: var(--font-family-sans-serif);
+    font-weight: var(--font-weight-light);
+    font-size: var(--font-size-sm);
+}
 strong {
     font-weight: var(--font-weight-bolder);
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    color: $white;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Container, Row, Col, Carousel } from 'react-bootstrap';
-import { Colors } from "../Helpers/Enums";
+//import { Colors } from "../Helpers/Enums";
 //import { Text, TextType } from "../Components/Text";
-import styled from "styled-components";
+//import styled from "styled-components";
 import Gallery from "react-photo-gallery";
 
 
@@ -20,20 +20,20 @@ export default class Photography extends Component<IProps, IState>  {
         }
     }
     render(){
-        const Section1 = styled.header`
-            background-image: linear-gradient(258.8deg, ${Colors.DkGray} 23.68%, ${Colors.MdGray} 106.16%);
-            .inner-wrapper {
-                background-image: url('/button-vector.svg');
-                background-repeat: no-repeat;
-                background-position: top right;
-                background-size: 400px;
-            }
-            @media (max-width: 872px) {
-                .inner-wrapper {
-                    background-image: none;
-                }
-            }
-        `;
+        // const Section1 = styled.header`
+        //     background-image: linear-gradient(258.8deg, ${Colors.DkGray} 23.68%, ${Colors.MdGray} 106.16%);
+        //     .inner-wrapper {
+        //         background-image: url('/button-vector.svg');
+        //         background-repeat: no-repeat;
+        //         background-position: top right;
+        //         background-size: 400px;
+        //     }
+        //     @media (max-width: 872px) {
+        //         .inner-wrapper {
+        //             background-image: none;
+        //         }
+        //     }
+        // `;
         
         const photos = [
             {
@@ -59,11 +59,11 @@ export default class Photography extends Component<IProps, IState>  {
                 currentImage: photo.index
             });
         }; 
-        const handleCloseLightbox = () => {
-            this.setState({
-                isLightboxOpen: false
-            });
-        }
+        // const handleCloseLightbox = () => {
+        //     this.setState({
+        //         isLightboxOpen: false
+        //     });
+        // }
         const handleCarouselSelect = (index: number) => {
             this.setState({
                 currentImage: index
