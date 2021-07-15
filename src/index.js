@@ -4,8 +4,9 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import HttpsRedirect from 'react-https-redirect';
 
-import './Styles/App.css';
-import 'bootstrap/dist/css/bootstrap.css';
+//import './Styles/App.css';
+import './custom.scss';
+//import 'bootstrap/dist/css/bootstrap.css';
 
 ReactDOM.render(
     <React.StrictMode>

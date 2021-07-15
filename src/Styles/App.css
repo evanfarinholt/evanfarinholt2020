@@ -11,12 +11,13 @@ body {
     height: 100vh;
 }
 #root {
+    
     height: 100vh;
     background: #474747;
     color: #fff;
-    /* display: grid;
+    display: grid;
     grid-template-columns: auto;
-    grid-template-rows: auto 50px; */
+    grid-template-rows: auto 50px;
 }
 
 /* NEW FONT RESETS */
@@ -29,8 +30,41 @@ h1,h2,h3,h4,h5,h6,p,span {
 }
 
 
+.font-primary {
+    font-family: 'Oxygen', sans-serif, sans-serif, -apple-system, BlinkMacSystemFont;
+}
 
-h1 {
+.font-secondary {
+    font-family: 'Oxygen Mono', monospace, sans-serif, -apple-system, BlinkMacSystemFont;
+}
+
+.font-size-1 {
+    font-size: 1rem;
+}
+.font-size-2 {
+    font-size: 1.5rem;
+}
+.font-size-3 {
+    font-size: 2rem;
+}
+.font-size-4 {
+    font-size: 3rem;
+}
+
+/* .font-weight-1 {
+    font-weight: 100;
+}
+.font-weight-2 {
+    font-weight: 300;
+}
+.font-weight-3 {
+    font-weight: 400;
+}
+.font-weight-4 {
+    font-weight: 700;
+} */
+
+/* h1 {
     font-family: 'Oxygen Mono', monospace, sans-serif, -apple-system, BlinkMacSystemFont;
     font-size: 3em !important;
 }
@@ -53,4 +87,4 @@ p {
 
 strong {
     font-weight: 700 !important;
-}
+} */
