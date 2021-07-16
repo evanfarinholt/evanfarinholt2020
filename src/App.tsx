@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Home from "./Pages/Home";
+import Music from "./Pages/Music";
 import { detect } from "detect-browser";
 import Banner from "./Components/Banner";
 import { Colors } from './Helpers/Enums';
@@ -43,7 +43,10 @@ export default class App extends Component {
         const browser = detect();
         const bannerContent = () => 
             <Text color={Colors.DkGray}>
-                <b>Warning!</b> This site uses code that may not be supported by your browser. <a href="https://www.google.com/chrome/" target="_blank" rel="noopener noreferrer">You can download a supported browser here</a>.
+                <b>Warning!</b> This site uses code that may not be supported by your browser. 
+                <a href="https://www.google.com/chrome/" target="_blank" rel="noopener noreferrer">
+                    <b>You can download a supported browser here</b>
+                </a>.
             </Text>
 
         return (
@@ -56,8 +59,7 @@ export default class App extends Component {
                 }
                 <BrowserRouter>
                     <Switch>
-                        <Route exact path={"/"} render={() => <Home />} />
-                        <Route path={"*"} render={() => <Home />} />
+                        <Route path={"*"} render={() => <Music />} />
                     </Switch>
                 </BrowserRouter>
             </>

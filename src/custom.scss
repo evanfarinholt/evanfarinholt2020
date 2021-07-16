@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen+Mono&family=Oxygen:wght@300;400;700&display=swap');
+
+
+// COLOR OVERRIDES
+$red: #D36262;
+$gray-dark: #343a40;
+$gray-light: #acacac;
+$gray-medium: #747474;
+
+// TEXT OVERRIDES
+$font-size-base: 1rem;
+$line-height-base: 1.5;
+
+// THEME OVERRIDES
+$theme-colors: (
+    "primary": $red,
+    "secondary": $gray-light
+);
+
+$body-bg: $gray-dark;
+$headings-margin-bottom: 0px;
+
+$btn-font-family: var(--font-family-sans-serif);
+$btn-font-weight: var(--font-weight-bolder);
+
+:root {
+    --font-family-sans-serif: 'Oxygen', sans-serif, sans-serif, -apple-system, BlinkMacSystemFont;
+    --font-family-monospace: 'Oxygen Mono', monospace, sans-serif, -apple-system, BlinkMacSystemFont;
+    --font-size-xl: 3rem;
+    --font-size-lg: 2.5rem;
+    --font-size-md: 1.25rem;
+    --font-size-sm: 1rem;
+    --font-size-xs: .8rem;
+    --font-weight-bolder: 700;
+    --font-weight-bold: 400;
+    --font-weight-light: 300;
+    --letter-spacing-alt: .1rem;
+}
+
+
+@import "~bootstrap/scss/bootstrap.scss";
+
+$body-color: $white;
+$link-color: $white;
+$link-primary-decoration: underline;
+
+body {
+    color: $white;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+    font-family: var(--font-family-monospace);
+    font-size: var(--font-size-xl);
+    letter-spacing: var(--letter-spacing-alt);
+}
+
+h2 {
+    font-family: var(--font-family-sans-serif);
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-light);
+}
+
+h3 {
+    font-family: var(--font-family-sans-serif);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-light);
+}
+
+h4 {
+    font-family: var(--font-family-monospace);
+    font-size: var(--font-size-md);
+    letter-spacing: var(--letter-spacing-alt);
+}
+
+p {
+    font-family: var(--font-family-sans-serif);
+    font-weight: var(--font-weight-light);
+    font-size: var(--font-size-md);
+    
+}
+
+span {
+    font-family: var(--font-family-sans-serif);
+    font-weight: var(--font-weight-light);
+    font-size: var(--font-size-md);
+}
+
+.special-link {
+    font-family: var(--font-family-monospace);
+    font-size: var(--font-size-sm);
+}
+.special-label{
+    font-family: var(--font-family-sans-serif);
+    font-weight: var(--font-weight-light);
+    font-size: var(--font-size-sm);
+}
+.underline {
+    border-bottom: 2px dashed white;
+    padding-bottom: 3px;
+}
+strong {
+    font-weight: var(--font-weight-bolder);
+}
+
+.event-item {
+    border-bottom: 1px dashed $gray-medium;
+}
+
+.drumsticks-background,
+.plug-background {
+    background-image: none;
+}
+
+@include media-breakpoint-up(lg) {
+    .drumsticks-background {
+        background-image: url('./Images/drumsticks-graphic.svg');
+        background-repeat: no-repeat;
+        background-position: right bottom;
+        background-size: 400px auto;
+    }
+    .plug-background {
+        min-height: 60px;
+        background-image: url('./Images/plug-graphic.svg');
+        background-repeat: no-repeat;
+        background-position: left center;
+        background-size: 500px auto;
+    }
+}
