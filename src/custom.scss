@@ -4,7 +4,8 @@
 // COLOR OVERRIDES
 $red: #D36262;
 $gray-dark: #343a40;
-$gray-medium: #acacac;
+$gray-light: #acacac;
+$gray-medium: #747474;
 
 // TEXT OVERRIDES
 $font-size-base: 1rem;
@@ -13,7 +14,7 @@ $line-height-base: 1.5;
 // THEME OVERRIDES
 $theme-colors: (
     "primary": $red,
-    "secondary": $gray-medium
+    "secondary": $gray-light
 );
 
 $body-bg: $gray-dark;
@@ -101,6 +102,10 @@ span {
 }
 strong {
     font-weight: var(--font-weight-bolder);
+}
+
+.event-item {
+    border-bottom: 1px dashed $gray-medium;
 }
 
 .drumsticks-background,

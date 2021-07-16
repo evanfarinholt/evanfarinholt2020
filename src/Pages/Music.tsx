@@ -20,7 +20,7 @@ export default class Photography extends Component<IProps, IState>  {
         }
 
         const socialLink = (icon: JSX.Element, label: string, url: string) => 
-            <div className="social-link-container d-flex flex-row">
+            <div className="social-link-container d-flex pb-1 pt-1">
                 <a href={url} target="_blank" rel="noopener noreferrer" className="link-primary d-flex flex-row pr-3">
                     <div className="pr-2">{icon}</div>
                     <span className="text-white special-link">{label}</span>
@@ -34,22 +34,22 @@ export default class Photography extends Component<IProps, IState>  {
             </button>
         
         const eventItem = (date: string, time: string, title: string, venue: string, address: string, cityState: string) => 
-            <div className="d-flex flex-row">
-                <div className="w-25 p-2 d-flex flex-row align-items-center">
-                <FontAwesomeIcon className="text-primary mr-3" icon={faCalendar} /> 
-                    <div className="d-flex flex-column">
-                        <span><strong>{date}</strong></span>
+            <div className="event-item d-flex flex-column flex-lg-row pb-2 pt-2">
+                <div className="pr-4 d-flex flex-row align-items-center">
+                    <FontAwesomeIcon className="text-primary mr-3" icon={faCalendar} /> 
+                    <div className="d-flex flex-row flex-lg-column">
+                        <span className="pr-2">{date}</span>
                         <span>{time}</span>
                     </div>
                 </div>
                 
-                <div className="w-50 p-2 title-block d-flex flex-column">
+                <div className="p-2 pr-4 title-block d-flex flex-column">
                     <span><strong>{title}</strong></span>
                     <span>{venue}</span>
                 </div>
-                <div className="w-25 p-2 d-flex flex-row align-items-center">
+                <div className="p-2 d-flex flex-row align-items-center">
                     <FontAwesomeIcon className="text-primary mr-3" icon={faMapMarkerAlt} /> 
-                    <div className="d-flex flex-column flex-start align-items-start">
+                    <div className="d-flex flex-row flex-lg-column flex-start align-items-start">
                         <span>{address}</span>
                         <span>{cityState}</span>
                     </div>
@@ -64,7 +64,7 @@ export default class Photography extends Component<IProps, IState>  {
                         <Col md={12} lg={9} className="d-flex flex-column justify-content-center"> 
                             <h1>Evan Farinholt</h1>
                             <h2>Musician &amp; Educator</h2>
-                            <div className="d-flex flex-row flex-wrap pt-2 pb-2">
+                            <div className="d-flex pt-2 pb-2 flex-lg-row flex-column">
                                 {socialLink(
                                     <FontAwesomeIcon className="text-primary" icon={faInstagram} /> 
                                     , "evanfarinholt"
@@ -91,7 +91,7 @@ export default class Photography extends Component<IProps, IState>  {
                     <Container>
                         <Row className="pt-3 pb-3">
                             <Col md={12} lg={10}>
-                                <h3>I’m a <strong>drummer</strong>, <strong>drum teacher</strong>, and <strong>music maker</strong> based out of Kittery Maine.</h3>
+                                <h3>I’m a <strong>drummer</strong>, <strong>drum teacher</strong>, and <strong>music maker</strong> based out of Kittery, Maine.</h3>
                             </Col>
                         </Row>
                         <Row>
