@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Oxygen+Mono&family=Oxygen:wght@300;400;700&display=swap');
 
+
 // COLOR OVERRIDES
 $red: #D36262;
 $gray-dark: #343a40;
@@ -41,10 +42,6 @@ $btn-font-weight: var(--font-weight-bolder);
 $body-color: $white;
 $link-color: $white;
 $link-primary-decoration: underline;
-
-.w-33 {
-    width: 33%;
-}
 
 body {
     color: $white;
