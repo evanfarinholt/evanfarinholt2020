@@ -59,7 +59,6 @@ export default class App extends Component {
                 }
                 <BrowserRouter>
                     <Switch>
-                        <Route exact path={"/"} render={() => <Music />} />
                         <Route path={"*"} render={() => <Music />} />
                     </Switch>
                 </BrowserRouter>

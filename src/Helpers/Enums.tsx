@@ -23,6 +23,6 @@ export const urls = {
 }
 
 export const events = [
-    {date: "Jul 24", time:"@6pm", title: " Drums w/ Beau Dalleo Trio", venue: "Féile Restaurant and Pub", address: "1619 Post Rd.", cityState: "Wells ME"}
-    , {date: "Jul 24", time:"@6pm", title: " Drums w/ Beau Dalleo Trio", venue: "Féile Restaurant and Pub", address: "1619 Post Rd.", cityState: "Wells ME"}
+    // {date: "Jul 24", time:"@6pm", title: " Drums w/ Beau Dalleo Trio", venue: "Féile Restaurant and Pub", address: "1619 Post Rd.", cityState: "Wells ME"}
+    // , {date: "Jul 24", time:"@6pm", title: " Drums w/ Beau Dalleo Trio", venue: "Féile Restaurant and Pub", address: "1619 Post Rd.", cityState: "Wells ME"}
 ]
