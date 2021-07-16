@@ -182,17 +182,6 @@ export default class Home extends Component {
                                         My Professional Journey
                                     </Text>
                                 </Col>
-                                <Col xs={3} sm={6} md={6} lg={6} xl={{span: 3, offset: 1}} className="d-flex justify-content-end">
-                                    <ResumeButton 
-                                        className="d-flex flex-row align-items-center"
-                                        href={urls.resumeUrl} 
-                                        target="_blank" 
-                                        rel="noopener noreferrer"
-                                    >
-                                        <FontAwesomeIcon className="link-icon" icon={faFilePdf} /> 
-                                        <Text className="button-text d-none d-sm-block" color={Colors.SunsetOrange} type={TextType.button}>Download Resume</Text>
-                                    </ResumeButton>
-                                </Col>
                             </Row>
                             <Row>
                                 <Col xl={{span: 8, offset: 2}}>
