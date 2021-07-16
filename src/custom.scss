@@ -3,14 +3,16 @@
 // COLOR OVERRIDES
 $red: #D36262;
 $gray-dark: #343a40;
+$gray-medium: #acacac;
 
 // TEXT OVERRIDES
 $font-size-base: 1rem;
-$line-height-base: 1.3;
+$line-height-base: 1.5;
 
 // THEME OVERRIDES
 $theme-colors: (
-    "primary": $red
+    "primary": $red,
+    "secondary": $gray-medium
 );
 
 $body-bg: $gray-dark;
@@ -24,7 +26,7 @@ $btn-font-weight: var(--font-weight-bolder);
     --font-family-monospace: 'Oxygen Mono', monospace, sans-serif, -apple-system, BlinkMacSystemFont;
     --font-size-xl: 3rem;
     --font-size-lg: 2.5rem;
-    --font-size-md: 1.5rem;
+    --font-size-md: 1.25rem;
     --font-size-sm: 1rem;
     --font-size-xs: .8rem;
     --font-weight-bolder: 700;
@@ -39,8 +41,10 @@ $btn-font-weight: var(--font-weight-bolder);
 $body-color: $white;
 $link-color: $white;
 $link-primary-decoration: underline;
-// $link-decoration-style: dashed;
-// $link-hover-decoration-style: dashed;
+
+.w-33 {
+    width: 33%;
+}
 
 body {
     color: $white;
@@ -76,12 +80,13 @@ p {
     font-family: var(--font-family-sans-serif);
     font-weight: var(--font-weight-light);
     font-size: var(--font-size-md);
+    
 }
 
 span {
     font-family: var(--font-family-sans-serif);
     font-weight: var(--font-weight-light);
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-md);
 }
 
 .special-link {
@@ -93,7 +98,31 @@ span {
     font-weight: var(--font-weight-light);
     font-size: var(--font-size-sm);
 }
+.underline {
+    border-bottom: 2px dashed white;
+    padding-bottom: 3px;
+}
 strong {
     font-weight: var(--font-weight-bolder);
 }
 
+.drumsticks-background,
+.plug-background {
+    background-image: none;
+}
+
+@include media-breakpoint-up(lg) {
+    .drumsticks-background {
+        background-image: url('./Images/drumsticks-graphic.svg');
+        background-repeat: no-repeat;
+        background-position: right bottom;
+        background-size: 400px auto;
+    }
+    .plug-background {
+        min-height: 60px;
+        background-image: url('./Images/plug-graphic.svg');
+        background-repeat: no-repeat;
+        background-position: left center;
+        background-size: 500px auto;
+    }
+}
